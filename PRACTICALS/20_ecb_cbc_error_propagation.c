@@ -1,0 +1,2 @@
+#include <stdio.h>
+int main(void){puts("CBC error propagation answers:");puts("a) A bit error in transmitted C1 corrupts all of P1 (block decryption) and flips the corresponding bit in P2; blocks P3 onward are not affected.");puts("b) A bit error in source P1 changes C1 and then all subsequent CBC ciphertext blocks (until message end). At receiver, P1 is corrupted unpredictably and later plaintext blocks are also corrupted because their chaining input changed.");return 0;}

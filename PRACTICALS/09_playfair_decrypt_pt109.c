@@ -1,0 +1,6 @@
+#include <stdio.h>
+#include <ctype.h>
+#include <string.h>
+void sqmake(char *key,char sq[5][5]){int u[26]={0},n=0;char a[200];snprintf(a,sizeof a,"%sABCDEFGHIJKLMNOPQRSTUVWXYZ",key);for(int i=0;a[i];i++){char c=toupper((unsigned char)a[i]);if(c<'A'||c>'Z')continue;if(c=='J')c='I';if(!u[c-'A']){u[c-'A']=1;sq[n/5][n%5]=c;n++;}}}
+void pos(char s[5][5],char c,int *r,int *k){if(c=='J')c='I';for(int i=0;i<5;i++)for(int j=0;j<5;j++)if(s[i][j]==c){*r=i;*k=j;return;}}
+int main(void){char key[100],c[500],sq[5][5];printf("Enter keyword used by sender: ");scanf("%99s",key);getchar();printf("Enter ciphertext (letters only are extracted): ");fgets(c,sizeof c,stdin);sqmake(key,sq);char p[500];int n=0;for(int i=0;c[i];i++)if(isalpha((unsigned char)c[i]))p[n++]=toupper((unsigned char)c[i]);if(n%2){puts("Ciphertext must contain an even number of letters.");return 1;}for(int i=0;i<n;i+=2){int r1,c1,r2,c2;pos(sq,p[i],&r1,&c1);pos(sq,p[i+1],&r2,&c2);if(r1==r2){p[i]=sq[r1][(c1+4)%5];p[i+1]=sq[r2][(c2+4)%5];}else if(c1==c2){p[i]=sq[(r1+4)%5][c1];p[i+1]=sq[(r2+4)%5][c2];}else{char t=p[i];p[i]=sq[r1][c2];p[i+1]=sq[r2][c1];(void)t;}}p[n]=0;printf("Decrypted digraphs (remove filler X where appropriate): %s\n",p);return 0;}

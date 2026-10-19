@@ -1,0 +1,2 @@
+#include <stdio.h>
+int main(void){int shifts[16]={1,1,2,2,2,2,2,2,1,2,2,2,2,2,2,1};puts("DES decryption uses encryption subkeys in reverse order: K16, K15, ..., K1.");puts("The standard 16-round left-rotation schedule for key generation is:");for(int i=0;i<16;i++)printf("Round %2d: left shift %d\n",i+1,shifts[i]);puts("To decrypt, generate the same subkeys and apply them in reverse round order.");return 0;}

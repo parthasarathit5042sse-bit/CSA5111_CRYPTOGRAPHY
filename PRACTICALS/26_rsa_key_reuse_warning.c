@@ -1,0 +1,2 @@
+#include <stdio.h>
+int main(void){puts("Answer: No, not safely if Bob keeps the same RSA modulus n.");puts("Changing e and d while reusing n after d leaks can leave the modulus compromised and may enable attacks depending on the old key and ciphertexts.");puts("Best practice: generate a fresh RSA key pair with a new modulus, revoke the old public key, and re-encrypt/rotate affected secrets.");return 0;}

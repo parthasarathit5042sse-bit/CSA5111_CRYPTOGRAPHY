@@ -1,0 +1,2 @@
+#include <stdio.h>
+int main(void){puts("DES is a 16-round Feistel block cipher with 64-bit blocks and a 56-bit effective key.");puts("A full implementation needs the initial/final permutations, expansion E, S-boxes, permutation P, PC-1, PC-2 and the key schedule.");puts("DES is obsolete and should not be used for real security. This file is a concise implementation note rather than a full DES cipher.");return 0;}

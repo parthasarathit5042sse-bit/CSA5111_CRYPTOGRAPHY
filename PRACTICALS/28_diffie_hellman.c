@@ -1,0 +1,3 @@
+#include <stdio.h>
+long long modpow(long long a,long long e,long long m){long long r=1;a%=m;while(e){if(e&1)r=r*a%m;a=a*a%m;e>>=1;}return r;}
+int main(void){long long a,q,x,y;printf("Enter public base a, prime modulus q, Alice secret x, Bob secret y: ");if(scanf("%lld%lld%lld%lld",&a,&q,&x,&y)!=4)return 1;long long A=modpow(a,x,q),B=modpow(a,y,q);printf("Alice sends A=a^x mod q = %lld\nBob sends B=a^y mod q = %lld\n",A,B);printf("Alice shared key = %lld\nBob shared key = %lld\n",modpow(B,x,q),modpow(A,y,q));puts("Using x*a instead of a^x does not give the usual Diffie-Hellman property. Authenticate the exchange to prevent man-in-the-middle attacks.");return 0;}

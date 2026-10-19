@@ -1,0 +1,2 @@
+#include <stdio.h>
+int main(void){puts("CMAC reduction constants Rb:");puts("64-bit block: 0x1B");puts("128-bit block: 0x87");puts("Derivation: encrypt the all-zero block to get L; left-shift L to get K1, XOR Rb into the least-significant byte if the original MSB was 1; repeat with K1 to get K2.");puts("The conditional reduction implements multiplication by x in the finite field defined by the block-size polynomial.");return 0;}

@@ -1,0 +1,2 @@
+#include <stdio.h>
+int main(void){puts("CBC-MAC length-extension observation for a fixed-length CBC-MAC:");puts("For one-block X, let T = MAC(K,X). The two-block message X || (X XOR T) can yield the same final chaining value T under the usual CBC-MAC construction.");puts("This illustrates why plain CBC-MAC is unsafe for variable-length messages unless message length is fixed or a secure variant is used.");return 0;}

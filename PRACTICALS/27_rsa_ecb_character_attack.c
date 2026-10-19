@@ -1,0 +1,2 @@
+#include <stdio.h>
+int main(void){puts("Not secure. Encrypting each alphabetic character independently with deterministic textbook RSA leaks equality and allows a codebook/frequency attack.");puts("An attacker can compute RSA encryption of all 26 possible letter values using the public key, match ciphertext blocks, and recover every letter without factoring n.");puts("Use randomized, standardized RSA-OAEP for encryption of small secrets, or preferably a hybrid scheme.");return 0;}

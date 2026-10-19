@@ -1,0 +1,2 @@
+#include <stdio.h>
+int main(void){puts("Known-plaintext attack concept for Hill cipher");puts("1. Collect plaintext and corresponding ciphertext blocks.");puts("2. Convert letters A=0,...,Z=25 into column vectors.");puts("3. Form matrices P and C so C = K*P (mod 26).");puts("4. If P is invertible modulo 26, recover K = C*P^{-1} (mod 26).");puts("This teaching program describes the attack; a full solver needs enough valid, invertible plaintext blocks.");return 0;}
