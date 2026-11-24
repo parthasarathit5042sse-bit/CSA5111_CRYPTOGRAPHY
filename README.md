@@ -1,3 +1,7 @@
+
+
+ Network URL: http://172.23.20.54:8501
+
 # CSA5111 – Cryptography and Network Security
 
 A coursework repository for **CSA5111 (Cryptography and Network Security)**. It contains C implementations of classical encryption algorithms, decryption techniques, cryptanalysis exercises, practical programs, assessments, and capstone project work.
